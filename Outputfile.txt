@@ -1,1 +1,2 @@
-Number of unique words:10
+Number of unique words:12
+List of unique words are[the, mad, times, foolishness, of, cat, was, best, worst, it, age, wisdom]
