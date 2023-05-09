@@ -19,6 +19,10 @@ public class Uniquewordcalculation {
         //Read text from file
         File file=new File("src\\main\\java\\Petshop\\Inputfile.txt");
         String text=FileUtils.readFileToString(file,"UTF-8");
+        text = text.toLowerCase();
+        text = text.replaceAll("[^a-z\\s]", "")
+                   .replace("\n", " ")
+                   .replace("\r", " ");
 
         //Split text into words
         String[] words= StringUtils.split(text," ");
@@ -35,8 +39,9 @@ public class Uniquewordcalculation {
 
         //print result to console
         logger.info("Number of unique words:"+numUniqueWords);
-        
-         //write result to file
+        logger.info("Unique words:"+uniquewords);
+
+        //write result to file
         File outputfile= new File("src\\main\\java\\Petshop\\Outputfile.txt");
         String result="Number of unique words:" +numUniqueWords;
         FileUtils.writeStringToFile(outputfile,result,"UTF-8");
